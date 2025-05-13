@@ -24,7 +24,7 @@ void addNode()
     {
         if (START != NULL && newNode->noMhs == START->noMhs)
         {
-            cout << "\033[31mDuplicate roll numbers not allowed\033]0m" << endl;
+            cout << "\033[31mDuplicate roll numbers not allowed\033[0m" << endl;
             return;
         }
 
@@ -85,6 +85,21 @@ void deleteNode()
     if (START == NULL)
     {
         cout << "List is empty" << endl;
+        return;
+    }
+
+    current = START;
+    previous = NULL;
+
+    while (current != NULL && current->noMhs != rollNo)
+    {
+        previous = current;
+        current = current->next;
+    }
+
+    if (current == NULL)
+    {
+        cout << "\033[31mThe record with roll number " << rollNo << " not found\033[0m" << endl;
         return;
     }
 }
