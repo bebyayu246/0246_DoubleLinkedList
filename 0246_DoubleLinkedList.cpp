@@ -36,4 +36,11 @@ void addNode()
         newNode->prev = NULL;
         START = newNode;
     }
-}
+    else
+    {
+        Node *current = START;
+        Node *previouse = NULL;
+
+        while (current != NULL && current->noMhs < newNode->noMhs)
+    }
+};
